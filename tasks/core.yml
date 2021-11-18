@@ -1,0 +1,15 @@
+- name: git ppa (git-core/ppa)
+  apt_repository:
+    repo: ppa:git-core/pp
+- name: appimagelauncher ppa (appimagelauncher-team/stable)
+  become: true
+  apt_repository:
+    repo: ppa:appimagelauncher-team/stable
+- name: Install core utils
+  become: true
+  apt:
+    name: ca-certificates
+- name: Install packages
+  become: true
+  apt:
+    name: ['appimagelauncher', 'xclip', 'wireshark', 'fzf', 'tldr', 'git']    
